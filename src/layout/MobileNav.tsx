@@ -12,11 +12,17 @@ import {
   MenuItem,
   MenuDivider,
   Text,
+  useColorMode,
+  Button,
 } from "@chakra-ui/react";
 import { FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+
 import { MobileProps } from "../interfaces";
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -47,6 +53,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       </Text>
 
       <HStack spacing={{ base: "0", md: "6" }}>
+        <Button onClick={toggleColorMode}>
+          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+        </Button>
         <IconButton
           size="lg"
           variant="ghost"
