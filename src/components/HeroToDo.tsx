@@ -1,4 +1,4 @@
-import { Container, Text, Stack, Heading, Flex, Box } from "@chakra-ui/react";
+import { Container, Text, Stack, Heading, Flex } from "@chakra-ui/react";
 import Illustration from "./Illustration";
 import ModalTodo from "./ModalTodo";
 
@@ -28,15 +28,7 @@ const HeroToDo = () => {
           tasks.
         </Text>
         <Stack spacing={6} direction={"row"}>
-          <Box
-            rounded={"full"}
-            px={6}
-            colorscheme={"orange"}
-            bg={"orange.400"}
-            _hover={{ bg: "orange.500" }}
-          >
-            <ModalTodo />
-          </Box>
+          <ModalTodo />
         </Stack>
         <Flex w={"full"}>
           <Illustration
