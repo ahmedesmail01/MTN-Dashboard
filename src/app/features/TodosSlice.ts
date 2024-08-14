@@ -13,15 +13,12 @@ export const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    addTodo: (
-      state,
-      action: PayloadAction<{ title: string; text: string }>
-    ) => {
+    addTodo: (state, action: PayloadAction<Partial<ITodo>>) => {
       const newTodo: ITodo = {
-        id: Date.now(),
-        title: action.payload.title,
-        text: action.payload.text,
-        completed: false,
+        id: action.payload.id || Date.now(),
+        title: action.payload.title || "",
+        text: action.payload.text || "",
+        completed: action.payload.completed || false,
       };
       state.todos.push(newTodo);
     },

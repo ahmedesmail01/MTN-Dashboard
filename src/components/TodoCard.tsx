@@ -8,7 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { toggleTodoComplete } from "../app/features/TodosSlice";
+import { toggleTodoComplete, deleteTodo } from "../app/features/TodosSlice";
 
 //
 
@@ -22,8 +22,13 @@ interface IProps {
 const TodoCard = ({ id, title, text, complete }: IProps) => {
   const dispatch = useDispatch();
 
+  // Handlers
   const handleDone = () => {
     dispatch(toggleTodoComplete(id));
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteTodo(id));
   };
 
   return (
@@ -56,13 +61,20 @@ const TodoCard = ({ id, title, text, complete }: IProps) => {
           >
             {title}
           </Heading>
-          <Text color={"gray.500"}>{text}</Text>
+          <Text
+            color={"gray.500"}
+            textDecoration={complete ? "line-through" : ""}
+          >
+            {text}
+          </Text>
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
           <Button colorScheme="teal" onClick={handleDone}>
             {complete ? "Undo" : "Done"}
           </Button>
-          <Button colorScheme="red">Remove</Button>
+          <Button colorScheme="red" onClick={handleDelete}>
+            Remove
+          </Button>
         </Stack>
       </Box>
     </Center>

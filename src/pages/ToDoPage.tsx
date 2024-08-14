@@ -1,14 +1,27 @@
 import { Grid } from "@chakra-ui/react";
 import HeroToDo from "../components/HeroToDo";
 import TodoCard from "../components/TodoCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import { ITodo } from "../interfaces";
+import { useEffect } from "react";
+import { addTodo } from "../app/features/TodosSlice";
 
 const ToDoPage = () => {
   const todos = useSelector((state: RootState) => state.todos.todos);
-  console.log(todos);
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      const parsedTodos: ITodo[] = JSON.parse(storedTodos);
+      parsedTodos.forEach((todo) => dispatch(addTodo(todo)));
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <>

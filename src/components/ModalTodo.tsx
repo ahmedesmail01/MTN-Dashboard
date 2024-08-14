@@ -12,6 +12,11 @@ import {
   FormLabel,
   Input,
   FormControl,
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  CloseButton,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../app/store";
@@ -19,6 +24,7 @@ import { addTodo } from "../app/features/TodosSlice";
 
 const ModalTodo = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [showAlert, setShowAlert] = useState(false);
   const [newTodo, setNewTodo] = useState({
     title: "",
     text: "",
@@ -26,6 +32,10 @@ const ModalTodo = () => {
   const dispatch = useDispatch();
 
   const handleAddTodo = () => {
+    if (newTodo.title === "") {
+      setShowAlert(true);
+      return;
+    }
     dispatch(addTodo(newTodo));
     console.log(newTodo);
     setNewTodo({ title: "", text: "" });
@@ -72,7 +82,21 @@ const ModalTodo = () => {
         onClose={onClose}
       >
         <ModalOverlay />
+
         <ModalContent>
+          {showAlert && (
+            <Alert status="error" position={"absolute"} bottom={-40}>
+              <AlertIcon />
+              <AlertTitle mr={2}>You Must Add Title</AlertTitle>
+              <AlertDescription>Fill the title input.</AlertDescription>
+              <CloseButton
+                onClick={() => setShowAlert(false)}
+                position="absolute"
+                right="8px"
+                top="8px"
+              />
+            </Alert>
+          )}
           <ModalHeader>Add New To-do</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
