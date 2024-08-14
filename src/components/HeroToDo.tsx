@@ -16,7 +16,7 @@ const HeroToDo = () => {
           fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
           lineHeight={"110%"}
         >
-          Meeting scheduling{" "}
+          Meeting scheduling
           <Text as={"span"} color={"orange.400"}>
             Catch Up Your Tasks
           </Text>
