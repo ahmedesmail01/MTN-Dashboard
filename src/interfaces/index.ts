@@ -22,8 +22,8 @@ export interface SidebarProps extends BoxProps {
 }
 
 export interface ITodo {
-  id?: number;
+  id: number;
   title: string;
   text: string;
-  completed?: boolean;
+  completed: boolean;
 }

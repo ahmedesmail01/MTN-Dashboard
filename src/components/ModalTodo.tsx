@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../app/store";
-import { addTodo, todosSlice } from "../app/features/TodosSlice";
+import { addTodo } from "../app/features/TodosSlice";
 
 const ModalTodo = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -27,6 +27,7 @@ const ModalTodo = () => {
 
   const handleAddTodo = () => {
     dispatch(addTodo(newTodo));
+    console.log(newTodo);
     setNewTodo({ title: "", text: "" });
     onClose();
   };
@@ -39,7 +40,11 @@ const ModalTodo = () => {
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
     if (storedTodos) {
-      dispatch(todosSlice.actions.addTodo(JSON.parse(storedTodos)));
+      JSON.parse(storedTodos).forEach(
+        (todo: { title: string; text: string }) => {
+          dispatch(addTodo(todo));
+        }
+      );
     }
   }, [dispatch]);
 

@@ -13,17 +13,17 @@ export const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    addTodo: (state, action) => {
+    addTodo: (
+      state,
+      action: PayloadAction<{ title: string; text: string }>
+    ) => {
       const newTodo: ITodo = {
         id: Date.now(),
-        title: action.payload,
-        text: action.payload,
+        title: action.payload.title,
+        text: action.payload.text,
         completed: false,
       };
-      if (newTodo.title) {
-        state.todos.push(newTodo);
-      }
-      return;
+      state.todos.push(newTodo);
     },
     toggleTodoComplete: (state, action: PayloadAction<number>) => {
       const todo = state.todos.find((todo) => todo.id === action.payload);
