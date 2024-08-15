@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -18,8 +18,7 @@ import {
   AlertTitle,
   CloseButton,
 } from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../app/store";
+import { useDispatch } from "react-redux";
 import { addTodo } from "../app/features/TodosSlice";
 
 const ModalTodo = () => {
@@ -37,30 +36,12 @@ const ModalTodo = () => {
       return;
     }
     dispatch(addTodo(newTodo));
-    console.log(newTodo);
     setNewTodo({ title: "", text: "" });
     onClose();
   };
 
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
-
-  const todos = useSelector((state: RootState) => state.todos.todos);
-
-  useEffect(() => {
-    const storedTodos = localStorage.getItem("todos");
-    if (storedTodos) {
-      JSON.parse(storedTodos).forEach(
-        (todo: { title: string; text: string }) => {
-          dispatch(addTodo(todo));
-        }
-      );
-    }
-  }, [dispatch]);
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
 
   return (
     <>
@@ -136,4 +117,4 @@ const ModalTodo = () => {
   );
 };
 
-export default ModalTodo;
+export default memo(ModalTodo);

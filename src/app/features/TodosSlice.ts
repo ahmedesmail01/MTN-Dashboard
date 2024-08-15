@@ -5,8 +5,10 @@ interface TodosState {
   todos: ITodo[];
 }
 
+// Load todos from local storage or initialize with an empty array
+const storedTodos = localStorage.getItem("todos");
 const initialState: TodosState = {
-  todos: [],
+  todos: storedTodos ? JSON.parse(storedTodos) : [],
 };
 
 export const todosSlice = createSlice({
