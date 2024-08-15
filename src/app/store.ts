@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import TodosSlice from "./features/TodosSlice";
+import weatherReducer from "./features/weatherSlice";
 
 // Import your reducers here
 // import userReducer from './features/user/userSlice'
@@ -9,6 +10,7 @@ import TodosSlice from "./features/TodosSlice";
 export const store = configureStore({
   reducer: {
     todos: TodosSlice,
+    weather: weatherReducer,
   },
 });
 
