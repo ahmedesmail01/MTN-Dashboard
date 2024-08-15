@@ -27,7 +27,7 @@ const ToDoPage = () => {
     <>
       <HeroToDo />
       <Grid
-        margin={30}
+        marginTop={0}
         templateColumns={"repeat(auto-fill, minmax(300px, 1fr))"}
         gap={6}
       >

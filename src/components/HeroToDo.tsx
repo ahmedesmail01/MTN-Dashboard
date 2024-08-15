@@ -15,13 +15,13 @@ const HeroToDo = () => {
       <Stack
         textAlign={"center"}
         align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 10, md: 10 }}
+        spacing={{ base: 2, md: 3 }}
+        py={{ base: 3, md: 3 }}
       >
         <Heading
           fontWeight={600}
-          fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
+          fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
+          lineHeight={"100%"}
         >
           Meeting scheduling{" "}
           <Text as={"span"} color={"orange.400"}>
@@ -34,7 +34,7 @@ const HeroToDo = () => {
           list, allowing you to efficiently organize, prioritize, and track your
           tasks.
         </Text>
-        <Stack spacing={6} direction={"row"}>
+        <Stack spacing={0} direction={"row"}>
           <Button
             as={"div"}
             rounded={"full"}
@@ -48,8 +48,8 @@ const HeroToDo = () => {
         </Stack>
         <Flex w={"full"}>
           <Illustration
-            height={{ sm: "24rem", lg: "28rem" }}
-            mt={{ base: 12, sm: 16 }}
+            height={{ sm: "10rem", lg: "14rem" }}
+            mt={{ base: 2, sm: 3 }}
           />
         </Flex>
       </Stack>
