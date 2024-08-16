@@ -1,26 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-}
-
-interface PostsState {
-  posts: Post[];
-  status: "idle" | "loading" | "failed";
-}
-
-const initialState: PostsState = {
-  posts: [],
-  status: "idle",
-};
+import { PostsState } from "../../interfaces";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
   const response = await axios.get("https://dummyjson.com/posts");
   return response.data.posts;
 });
+
+const initialState: PostsState = {
+  posts: [],
+  status: "idle",
+};
 
 const postsSlice = createSlice({
   name: "posts",

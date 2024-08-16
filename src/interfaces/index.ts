@@ -29,7 +29,7 @@ export interface ITodo {
   completed: boolean;
 }
 
-// weather interfaces
+// weather slice interfaces
 
 export interface WeatherState {
   currentWeather: CurrentWeather | null;
@@ -60,4 +60,17 @@ export interface Forecast {
       main: string;
     }[];
   }[];
+}
+
+//posts slice interfaces
+
+export interface Post {
+  id: number;
+  title: string;
+  body: string;
+}
+
+export interface PostsState {
+  posts: Post[];
+  status: "idle" | "loading" | "failed";
 }
