@@ -3,9 +3,9 @@ import PostCard from "./PostCard";
 
 //
 import { useSelector } from "react-redux";
-import { RootState } from "../app/store";
-import LoadingSpinner from "./ui/LoadingSpinner";
-import ErrorComp from "./ui/ErrorComp";
+import { RootState } from "../../app/store";
+import LoadingSpinner from "../ui/LoadingSpinner";
+import ErrorComp from "../ui/ErrorComp";
 //
 
 interface Post {

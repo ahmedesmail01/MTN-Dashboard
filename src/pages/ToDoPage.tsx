@@ -1,6 +1,6 @@
 import { Grid } from "@chakra-ui/react";
-import HeroToDo from "../components/HeroToDo";
-import TodoCard from "../components/TodoCard";
+import HeroToDo from "../components/todos/HeroToDo";
+import TodoCard from "../components/todos/TodoCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import { ITodo } from "../interfaces";

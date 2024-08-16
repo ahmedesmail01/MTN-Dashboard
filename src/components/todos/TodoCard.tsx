@@ -8,7 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { toggleTodoComplete, deleteTodo } from "../app/features/TodosSlice";
+import { toggleTodoComplete, deleteTodo } from "../../app/features/TodosSlice";
 
 //
 

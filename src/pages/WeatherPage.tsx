@@ -1,5 +1,5 @@
-import HeroWeather from "../components/HeroWeather";
-import WeatherResults from "../components/WeatherResults";
+import HeroWeather from "../components/weather/HeroWeather";
+import WeatherResults from "../components/weather/WeatherResults";
 
 const WeatherPage = () => {
   return (

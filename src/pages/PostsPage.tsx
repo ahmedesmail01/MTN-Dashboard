@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../app/store";
 import { fetchPosts } from "../app/features/postsSlice";
-import SearchBarPosts from "../components/SearchBarPosts";
-import PostsGrid from "../components/PostsGrid";
-import PaginationPosts from "../components/PaginationPosts";
+import SearchBarPosts from "../components/posts/SearchBarPosts";
+import PostsGrid from "../components/posts/PostsGrid";
+import PaginationPosts from "../components/posts/PaginationPosts";
 
 const PostsPage = () => {
   const dispatch = useDispatch<AppDispatch>();

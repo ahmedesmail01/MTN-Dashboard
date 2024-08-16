@@ -19,7 +19,7 @@ import {
   CloseButton,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../app/features/TodosSlice";
+import { addTodo } from "../../app/features/TodosSlice";
 
 const ModalTodo = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

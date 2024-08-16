@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../app/store";
-import { fetchForecast, fetchWeather } from "../app/features/weatherSlice";
+import { AppDispatch } from "../../app/store";
+import { fetchForecast, fetchWeather } from "../../app/features/weatherSlice";
 
 const HeroWeather = () => {
   const [city, setCity] = useState<string>("");

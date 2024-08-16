@@ -1,9 +1,9 @@
 import { Grid, Text, Heading } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
-import { RootState } from "../app/store";
+import { RootState } from "../../app/store";
 import WeatherCard from "./WeatherCard";
-import ErrorComp from "./ui/ErrorComp";
-import LoadingSpinner from "./ui/LoadingSpinner";
+import ErrorComp from "../ui/ErrorComp";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
 const WeatherResults = () => {
   const weather = useSelector(
