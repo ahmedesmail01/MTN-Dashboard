@@ -3,6 +3,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import TodosSlice from "./features/TodosSlice";
 import weatherReducer from "./features/weatherSlice";
 import postsReducer from "./features/postsSlice";
+import userReducer from "./features/userSlice";
 
 // Import your reducers here
 // import userReducer from './features/user/userSlice'
@@ -13,6 +14,7 @@ export const store = configureStore({
     todos: TodosSlice,
     weather: weatherReducer,
     posts: postsReducer,
+    user: userReducer,
   },
 });
 

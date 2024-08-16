@@ -74,3 +74,19 @@ export interface PostsState {
   posts: Post[];
   status: "idle" | "loading" | "failed";
 }
+
+// profile interfaces
+export interface UserState {
+  data: {
+    name: string;
+    id: number;
+    location: string;
+    html_url: string;
+    avatar_url: string;
+    followers: number;
+    following: number;
+    bio: string;
+  } | null;
+  loading: boolean;
+  error: string | null;
+}
