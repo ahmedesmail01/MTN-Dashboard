@@ -93,12 +93,12 @@ const SearchBarPosts = ({ searchTerm, setSearchTerm }: SearchBarProps) => {
             w={"full"}
           >
             <Blob
-              w={"150%"}
+              w={"100%"}
               h={"150%"}
               position={"absolute"}
               top={"-20%"}
               left={0}
-              zIndex={-1}
+              zIndex={0}
               color={useColorModeValue("red.50", "red.400")}
             />
             <Box
