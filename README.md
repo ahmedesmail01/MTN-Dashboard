@@ -4,6 +4,10 @@
 
 MTN-Dashboard is a React-based dashboard application built with TypeScript, Vite, and various modern web technologies. It provides a comprehensive set of features including todo management, weather forecasts, post browsing, and profile information display.
 
+## Demo on Netlify:
+
+    https://mtn-dashboard.netlify.app/
+
 ## Technologies Used
 
 ---
@@ -56,6 +60,7 @@ All pages implement loading and error states for improved user experience.
 1.  Clone the repository: https://github.com/ahmedesmail01/MTN-Dashboard.git
 2.  Navigate to the project directory: `cd MTN-Dashboard`
 3.  Install dependencies: `npm install`
+4.  Demo on netlify: https://mtn-dashboard.netlify.app/
 
 The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
 
