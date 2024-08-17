@@ -6,7 +6,7 @@ MTN-Dashboard is a React-based dashboard application built with TypeScript, Vite
 
 ## Demo on Netlify:
 
-    "https://mtn-dashboard.netlify.app/"
+- Demo : "https://mtn-dashboard.netlify.app/"
 
 ## Technologies Used
 
